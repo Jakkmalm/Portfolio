@@ -1,0 +1,74 @@
+/* 
+-- PROJECT-STYLE ////////////////////////////////////////////////////////////////
+*/
+
+.project-component {
+    height: auto;
+
+    .project-title {
+        margin: 50px;
+    }
+
+    .project-container {
+        min-height: 300px;
+        height: auto;
+        width: 70%;
+        display: flex;
+        margin: 100px auto;
+        justify-content: space-between;
+        gap: 50px;
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+
+            &:hover {
+                cursor: pointer;
+                color: var(--primary-color);
+            }
+        }
+
+        .projects {
+            //display: flex;
+            flex: 1;
+            flex-direction: column;
+
+            p {
+                font-size: 1.1rem;
+                margin: 20px 0px;
+            }
+        }
+        button {
+            margin: 0px;
+            margin-top: auto;
+        }
+    }
+}
+
+/*
+ MEDIA QUERY ---------------------------------
+*/
+
+@media screen and (max-width: 1080px) {
+    .project-component {
+        .project-container {
+            width: 100%;
+            gap: 0px;
+            margin-bottom: 100px;
+            height: auto;
+            padding: inherit;
+            display: flex;
+            flex-direction: column;
+
+            .projects {
+                border-bottom: 1px solid white;
+                padding: 20px;
+                margin: 20px;
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,152 @@
+/*
+-- RESET --
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*
+-- GLOBAL-STYLES --
+*/
+
+a {
+  text-decoration: none;
+}
+
+.App {
+  background-color: black;
+}
+
+h1 {
+  display: block;
+  text-align: center;
+}
+
+/*
+-- NAVBAR STYLE --
+*/
+
+nav {
+  margin-top: 20px;
+  padding: 0px 50px 0px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  p {
+    color: orange;
+    font-size: 1.8rem;
+  }
+}
+
+/*
+-- IMAGES --
+*/
+
+.bg-img-hero {
+  background-image: url(./img/background-journeyy.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: 0 -25px 25px 10px rgb(0, 0, 0) inset;
+}
+
+.bg-img-two {
+  background-image: url(./img/background-journey5.jpg);
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 25px 40px 10px rgb(0, 0, 0) inset;
+}
+/*
+.main-bg-img {
+  HITTA BILD
+}
+*/
+/*
+.bg-img-three {
+  background-image: url(./img/background-journey2.png);
+  background-size: cover;
+  background-position: top -400px;
+  box-shadow: 0 -25px 25px 10px rgb(0, 0, 0) inset;
+}
+*/
+
+/*
+-- HOME-COMPONENT --
+*/
+
+.main-section-home {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .section {
+      z-index: 1;
+      height: auto;
+      width: 50%;
+      padding: 20px;
+      border: 3px solid #cccccc9a;
+      border-radius: 20px;
+
+      &:hover {
+        border-color: orange;
+      }
+    }
+    .section:nth-child(even) {
+      margin-left: auto;
+    }
+  }
+}
+
+/*
+-- FOOTER-COMPONENT --
+*/
+
+footer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+}
+
+.left-footer-section {
+  width: 30%;
+  backdrop-filter: blur(10px);
+}
+
+.right-footer-section {
+  width: 70%;
+}
+
+/*
+-- MEDIA QUERIES --
+*/
+
+@media screen and (max-width: 900px) {
+  .main-section-home {
+    width: 90%;
+    margin: auto;
+    .info-list {
+      gap: 20px;
+
+      .section {
+        width: 100%;
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+
+
+
+.project-container {
+  background: rgb(0, 255, 242);
+}

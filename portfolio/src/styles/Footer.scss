@@ -1,0 +1,130 @@
+/*  
+   FOOTER CSS
+*/
+
+footer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+
+    form {
+        max-width: 60%;
+        backdrop-filter: blur(3px);
+        border-radius: 10px;
+        padding: 20px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: 0.5s;
+            border: 2px solid white;
+        }
+
+        input::placeholder {
+            font-size: 1rem;
+        }
+
+        input[type="text"] {
+            font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+            font-size: 1rem;
+            padding: 5px 10px;
+            outline: none;
+        }
+
+        input[type="email"] {
+            font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+            font-size: 1rem;
+            padding: 5px 10px;
+            outline: none;
+        }
+
+        textarea {
+            border-radius: 5px;
+            height: 120px;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border: 2px solid white;
+            resize: none;
+            outline: none;
+            transition: 0.5s;
+        }
+
+        textarea::placeholder {
+            font-size: 1rem;
+        }
+
+        label {
+            font-size: 1.2rem;
+        }
+
+        textarea:focus,
+        input:focus {
+            border: 2px solid var(--primary-color);
+        }
+    }
+    .left-footer-section {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right-footer-section {
+        margin-bottom: 280px;
+        align-self: flex-end;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+}
+
+/* 
+  MEDIA QUERY -------------------------------
+*/
+
+@media screen and (max-width: 1080px) {
+    footer {
+        flex-direction: column;
+
+        .left-footer-section {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 60%;
+
+            form {
+                max-width: inherit;
+                backdrop-filter: blur(5px);
+                border-radius: 10px;
+                padding: 20px 20px 10px 20px;
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-size: 1rem;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+        .right-footer-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: inherit;
+            align-items: center;
+            width: 100%;
+            height: 40%;
+        }
+    }
+}

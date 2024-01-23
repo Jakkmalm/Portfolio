@@ -1,0 +1,47 @@
+{
+  "personInformation": {
+    "kontakt": {
+      "fNamn" : "Jacob",
+      "eNamn" : "Malmberg",
+      "email": "jacobmalmberg@hotmail.com",
+      "telefon": "123-456-789"
+    }
+  },
+  "omMig": [
+    {
+      "id": 1,
+      "header": "Vem är jag?",
+      "text": "Mitt namn är Jacob Malmberg, jag är 30 år gammal och bor i Västervik. Jag har sedan 2020 påbörjat min resa mot, att förhoppningsvis få arbeta med webbutveckling på heltid. Jag har alltid gillat att få skapa och vara kreativ, men aldrig riktigt vetat inom vilket område. Sedan hittade jag webbutveckling/programmering och började direkt att läsa, kolla runt och testa. Jag kände ganska snabbt att det fanns nästintill oändligt med möjligheter att få vara just kreativ. Under studierna har jag fått utforska området ytterligare och också fått en bredare och tydligare insikt i vad det innebär. Bland annat genom att själv ha fått skapa mindre, men spännande projekt inom både back-end och front-end."
+    },
+    {
+      "id": 2,
+      "header": "Erfarenheter",
+      "text": "Utbildningen har gett mig massor utav nya kunskaper och erfarenheter inom mycket vad gäller Webbutveckling, - Grunder i Datakunskap, Nätverk & Säkerhet, Design & Användardesign, databashantering & modeller, samt grunder i aktuella märk- och programmerings-språk. "
+    },
+    {
+      "id": 3,
+      "header": "Mål & Vision",
+      "text": "Jag hoppas innerligt att jag kommer få chansen att fortsätta utvecklas och lära mig mer. Att få arbeta vidare i spännande projekt och att fortsätta utmana mig själv är något jag ser fram emot. Jag hoppas på nya roliga utmaningar framöver och att få chansen att skapa innovativa och meningsfulla lösningar. Med en passion för att växa professionellt och personligt ser jag fram emot framtida möjligheter och att bidra till den ständigt föränderliga världen av webbutveckling."
+    }
+  ],
+  "projekt": [
+    {
+      "id": 1,
+      "projektNamn": "PHP",
+      "beskrivning": "Ett mindre PHP-projekt kopplat till MySQL-databas, med login-alternativ. Man kan som användare ha olika admin-nivåer för att kunna göra olika typer utav ändringar till databas.",
+      "url": "https://webbkurs.ei.hv.se/~jama0019/Modul.4.PHP/"
+    },
+    {
+      "id": 2,
+      "projektNamn": "Wordpress",
+      "beskrivning": "Ett slutprojekt i WordPress. Har här skapat en hemsida som erbjuder piano-lektioner online.",
+      "url": "https://webbkurs.ei.hv.se/~jama0019/wpExUppg/"
+    },
+    {
+      "id": 3,
+      "projektNamn": "Vanilla-JS",
+      "beskrivning": "Mitt allra första Javascript-projekt. Skriver i Vanilla-JS. Ett enkelt Memory-spel med två användare, med enklare funktioner.",
+      "url": "https://webbkurs.ei.hv.se/~jama0019/Ex.uppg.Memory/Memory-game/"
+    }
+  ]
+}

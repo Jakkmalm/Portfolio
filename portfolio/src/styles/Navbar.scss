@@ -1,0 +1,109 @@
+nav {
+    min-height: 100px;
+    margin: 20px;
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .menu-icon,
+    .menu-xmark {
+        z-index: 2;
+        display: none;
+        height: auto;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+    }
+
+    .logo {
+        position: absolute;
+        top: -30px;
+        left: 80px;
+        background-size: cover;
+        background-position: center center;
+        font-size: 30px;
+        height: 150px;
+        width: 150px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .link-container {
+        display: flex;
+        height: auto;
+        gap: 20px;
+        .links {
+            a {
+                margin: 40px;
+                font-size: 1.3rem;
+                text-transform: uppercase;
+                &:hover {
+                    transition: 0.5s;
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+}
+
+/*
+ MEDIA QUERY ---------------------------------
+*/
+
+@media screen and (max-width: 1080px) {
+    nav {
+        height: auto;
+        padding: inherit;
+        margin: 0;
+        transition: 0.9s ease;
+
+        .logo {
+            left: 20px;
+        }
+
+        .menu-icon,
+        .menu-xmark {
+            display: block;
+            cursor: pointer;
+            font-size: 30px;
+            margin: 20px;
+        }
+
+        .link-container {
+            display: none;
+        }
+
+        .link-container.mobile {
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            backdrop-filter: blur(20px);
+            width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            align-items: flex-end;
+
+            .menu-xmark {
+                align-self: flex-end;
+            }
+
+            .links {
+                margin: 120px 0px;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                gap: 50px;
+
+                a {
+                    margin: 0px;
+                }
+            }
+        }
+    }
+}
