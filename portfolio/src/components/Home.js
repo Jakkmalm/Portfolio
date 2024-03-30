@@ -26,10 +26,6 @@ function Home() {
   // state för API-data Projekt
   const [projectData, setProjectData] = useState(data.projekt);
 
-  
-
-
-
   /*
   const handleProjectData = (data) => {
     setProjectsData(data);
@@ -85,7 +81,8 @@ function Home() {
         <Navbar />
         <div className="hero-section-home">
           <h1 className="hero-title">Välkommen</h1>
-          <p className="hero-text">Det här är min enkla Portfolio.</p>
+          <p>Projekt: Portfolio</p>
+          <p className="hero-text">React.js</p>
         </div>
       </ParallaxLayer>
       {/* Parallax-layer 2. */}
