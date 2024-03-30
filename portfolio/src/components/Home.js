@@ -6,6 +6,8 @@ import Footer from "./Footer";
 import Info from "./Info";
 import Carousel from "./Carousel";
 
+import data from "../jsonData/data.json";
+
 import img1 from "../img/ben-griffiths-4wxWBy8Jo1I-unsplash.jpg";
 import img2 from "../img/souvik-banerjee--WPrNEM_6dg-unsplash.jpg";
 import img3 from "../img/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg";
@@ -19,12 +21,14 @@ function Home() {
   const parallaxRef = useRef();
 
   // state för APi-data - default null.
-  const [info, setInfo] = useState(null);
+  const [info, setInfo] = useState(data.omMig);
 
   // state för API-data Projekt
-  const [projectData, setProjectData] = useState(null);
+  const [projectData, setProjectData] = useState(data.projekt);
 
-  //const [projectsData, setProjectsData] = useState(null);
+  
+
+
 
   /*
   const handleProjectData = (data) => {
@@ -32,8 +36,9 @@ function Home() {
     console.log("Data från Projects:", data);
     console.log(data);
   }*/
-
+  /*
   useEffect(() => {
+    
     // async-funktion
     const fetchData = async () => {
       try {
@@ -65,6 +70,7 @@ function Home() {
     // Anropa fetch-funktionen.
     fetchData();
   }, []);
+  */
 
   // https://www.react-spring.dev/docs/components/parallax
 

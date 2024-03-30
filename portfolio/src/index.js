@@ -44,7 +44,7 @@ library.add(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // LÄGG TILL basename="/~jama0019/build"   vid deploy
-  <BrowserRouter basename="/~jama0019/build">
+  <BrowserRouter>
     <App />
   </BrowserRouter>
 );

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "../styles/Contact.scss";
 import Navbar from "./Navbar";
+import data from "../jsonData/data.json";
 
 function Contact() {
   // states för jsondata
-  const [personInfo, setPersonInfo] = useState(null);
+  const [personInfo, setPersonInfo] = useState(data.personInformation.kontakt);
 
+  /*
   // funktion som hämtar data från api.
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +32,7 @@ function Contact() {
     console.log(personInfo);
     fetchData();
   }, []);
-
+   */
   return (
     <div className="contact-component">
       <Navbar />

@@ -3,13 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/Projects.scss";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import data from "../jsonData/data.json";
 
 function Projects() {
   // states för project och project som visas
-  const [projects, setProjects] = useState(null);
+  const [projects, setProjects] = useState(data.projekt);
 
   const [projectDisplayed, setProjectDesplayed] = useState(null);
 
+  /*
   useEffect(() => {
     // async-funktion
     const fetchData = async () => {
@@ -39,7 +41,7 @@ function Projects() {
     // Anropa fetch-funktionen.
     fetchData();
   }, []);
-
+  */
   const handleProjectClick = (project) => {
     setProjectDesplayed(project);
   };

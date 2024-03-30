@@ -42,6 +42,11 @@
       "projektNamn": "Vanilla-JS",
       "beskrivning": "Mitt allra första Javascript-projekt. Skriver i Vanilla-JS. Ett enkelt Memory-spel med två användare, med enklare funktioner.",
       "url": "https://webbkurs.ei.hv.se/~jama0019/Ex.uppg.Memory/Memory-game/"
+    },
+    {
+      "id": 4,
+      "projektNamn": "React-Native",
+      "beskrivning": "En React-native applikation där jag arbetat med eget node/express API + MongoDBAtlas"
     }
   ]
 }
