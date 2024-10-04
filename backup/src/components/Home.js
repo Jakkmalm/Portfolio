@@ -1,93 +1,163 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-//import Projects from "./Projects";
+import { useEffect, useState, useRef } from "react";
+import "../styles/Home.scss";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { useEffect, useState } from "react";
-import InfoList from "./InfoList";
+import Info from "./Info";
+import Carousel from "./Carousel";
 
-// aboutMe, header, text
+import data from "../jsonData/data.json";
+
+import img1 from "../img/ben-griffiths-4wxWBy8Jo1I-unsplash.jpg";
+import img2 from "../img/souvik-banerjee--WPrNEM_6dg-unsplash.jpg";
+import img3 from "../img/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+//
 function Home() {
-  const [info, setInfo] = useState(null);
+  // https://www.react-spring.dev/docs/components/parallax
+  // useRef hook för parallax scrollTo.
+  const parallaxRef = useRef();
 
+  // state för APi-data - default null.
+  const [info, setInfo] = useState(data.omMig);
+
+  // state för API-data Projekt
+  const [projectData, setProjectData] = useState(data.projekt);
+
+  /*
+  const handleProjectData = (data) => {
+    setProjectsData(data);
+    console.log("Data från Projects:", data);
+    console.log(data);
+  }*/
+  /*
   useEffect(() => {
-    fetch("https://mocki.io/v1/c2998deb-3d64-4c28-9c26-3f8a7e8669d6")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("ERROR");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const omMigData = data.omMig;
+    
+    // async-funktion
+    const fetchData = async () => {
+      try {
+        // fetch URL, och inväntar svar.
+        const response = await fetch(
+          "https://mocki.io/v1/3dd13742-deb9-4e84-8811-99f5988a9692"
+        );
+        console.log(response.ok);
 
-        console.log(omMigData);
-        setInfo(omMigData);
-      })
-      .catch((error) => {
+        // Om svar inte är ok(false) - throw error
+        if (!response.ok) {
+          throw Error("ERROR");
+        }
+        // annars omvandla response till JSON och lagra som data.
+        const data = await response.json();
+        // uppdatera state med omMig-data.
+        const omMigJSON = data.omMig;
+        const projektJSON = data.projekt;
+
+        console.log(omMigJSON);
+        // setInfo till updaterat state.
+        setInfo(omMigJSON);
+        // setProjectData uppdatera med data.
+        setProjectData(projektJSON);
+      } catch (error) {
         console.error("Error fetching data", error);
-      });
+      }
+    };
+    // Anropa fetch-funktionen.
+    fetchData();
   }, []);
+  */
 
   // https://www.react-spring.dev/docs/components/parallax
+
   return (
-    <Parallax pages={3.3}>
+    <Parallax className="parallax-container" pages={4} ref={parallaxRef}>
       {/* Parallax-layer 1. */}
       <ParallaxLayer
+        title="hero-img"
         className="parallax bg-img-hero"
-        alt="moon"
         offset={0}
-        speed={1}
-        factor={1}
       >
+        <Navbar />
         <div className="hero-section-home">
-          {/*<Navbar /> */}
-          <h2>HERO-SECTION-HOME</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit
-            fugiat ut veritatis totam doloribus sed commodi illo corrupti
-            aperiam eos unde, quas doloremque at officiis quod explicabo non
-            vero? Consequatur?
-          </p>
+          <h1 className="hero-title">Välkommen</h1>
+          <p>Projekt: Portfolio</p>
+          <p className="hero-text">React.js</p>
         </div>
       </ParallaxLayer>
       {/* Parallax-layer 2. */}
-      <ParallaxLayer
-        className="parallax"
-        offset={1}
-        speed={0.5}
-        factor={1}
-      ></ParallaxLayer>
+      <ParallaxLayer className="parallax" offset={1} />
+
       {/* Parallax-layer 3. */}
       <ParallaxLayer
         className="hero-text-para"
-        offset={0.5}
+        offset={0.48}
         speed={0.5}
-        factor={0.5}
+        style={{}}
       >
         {/* HEADER HERO-TOP */}
-        <h1>VÄLKOMMEN!</h1>
+        <h1 className="hero-header">Om mig</h1>
       </ParallaxLayer>
+
       {/* Parallax-layer 4. */}
-      <ParallaxLayer offset={1} speed={0.5}></ParallaxLayer>
+      <ParallaxLayer
+        className="scroll-div-top parallax"
+        offset={0.55}
+        speed={0.3}
+        onClick={() => parallaxRef.current.scrollTo(1.1)}
+        style={{
+          height: "30px",
+        }}
+      >
+        {/* FONT ICON  */}
+        <i>
+          <FontAwesomeIcon icon="fa-chevron-down" />
+        </i>
+      </ParallaxLayer>
+
       {/* Parallax-layer 5. */}
-      <ParallaxLayer offset={1.1}>
-        <main className="main-section-home main-bg-img">
-          {/* HEADER MAIN-HOME. */}
-          <h1>Om mig och min resa</h1>
-          {info && <InfoList info={info} />}
+      <ParallaxLayer
+        className="bg-img-balls parallax"
+        offset={1.3}
+        speed={1.5}
+      ></ParallaxLayer>
+
+      {/* Parallax-layer 6. */}
+      <ParallaxLayer className="parallax" offset={1.15} speed={0.3}>
+        {/* HEADER MAIN-HOME. */}
+        <h1 className="main-header">Om mig och min resa</h1>
+      </ParallaxLayer>
+
+      {/* Parallax-layer 7. */}
+      <ParallaxLayer offset={1.2} speed={0.5}>
+        <main className="main-section-home parallax">
+          {/* infoList - skicka props 
+          <Projects projectsData={handleProjectData}/>*/}
+          {info && <Info info={info} />}
+          {/* renderar carousel-komponent och skickar props */}
+          <Carousel images={[img1, img2, img3]} projects={projectData} />
         </main>
       </ParallaxLayer>
-      {/* Parallax-layer 6. FOOTER IMAGE */}
+
+      {/* Parallax-layer 8. */}
       <ParallaxLayer
-        className="bg-img-two"
-        offset={2.5}
-        speed={0.5}
-        factor={1}
-      ></ParallaxLayer>
-      {/* Parallax-layer 7. */}
-      <ParallaxLayer offset={2.4} speed={0}>
+        className="scroll-div-bottom parallax"
+        offset={3.81}
+        speed={0.7}
+        onClick={() => parallaxRef.current.scrollTo(0)}
+        style={{
+          zIndex: 1,
+          height: "40px",
+        }}
+      >
         {/* HEADER END-HOME. */}
-        <h1>SLUT</h1>
+        <i>
+          <FontAwesomeIcon className="icon-up" icon="fa-chevron-up" />
+        </i>
+      </ParallaxLayer>
+
+      {/* Parallax-layer 9. */}
+      <ParallaxLayer className="parallax" offset={3.05} speed={0.5}>
         <Footer />
       </ParallaxLayer>
     </Parallax>

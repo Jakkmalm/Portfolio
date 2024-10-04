@@ -1,0 +1,12 @@
+/*
+ CONTACT STYLE ----------------
+*/
+
+.contact-info-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 2s;
+}

@@ -1,0 +1,78 @@
+.info-component {
+    .info-vert-container {
+        max-width: inherit;
+
+        .info-vert-element {
+            margin: 20px;
+
+            .vertical-timeline-element-content {
+                //z-index: 1;
+                -webkit-backface-visibility: hidden; /* https://stackoverflow.com/questions/10134935/weird-css3-transition-flickering */
+                border-bottom: none;
+                background-color: inherit;
+                backdrop-filter: blur(10px);
+                border-radius: 20px 20px 0px 0px;
+                width: 48%;
+
+                .bounce-in {
+                    transition: 4s;
+                }
+
+                .vertical-timeline-element-content-arrow,
+                .vertical-timeline-element-date {
+                    display: none;
+                }
+            }
+
+            .vertical-timeline-element-icon {
+                display: none;
+            }
+
+            &:hover {
+                border-color: var(--primary-color);
+            }
+
+            p {
+                font-size: 1.1rem;
+                font-weight: normal;
+                padding: 5px;
+            }
+
+            h2 {
+                color: white;
+                padding: 5px;
+            }
+
+            .section:nth-child(even) {
+                margin-left: auto;
+            }
+        }
+
+        /*
+        .section:nth-child(even) {
+            margin-left: auto;
+          }
+          */
+    }
+}
+
+/*
+-- MEDIA QUERIES --///////////////////////////////////////////////////////////
+*/
+
+@media screen and (max-width: 1080px) {
+    .info-component {
+        .info-vert-container {
+            .info-vert-element {
+                .vertical-timeline-element-content {
+                    margin: 0px;
+                    width: 100%;
+
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

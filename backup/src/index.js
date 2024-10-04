@@ -5,8 +5,45 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
+// FONT AWESOME
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  fab,
+  faInstagram,
+  faFacebook,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faCoffee,
+  faExternalLink,
+  faCopyright,
+  faBars,
+  faXmark,
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+  fab,
+  faCoffee,
+  faChevronUp,
+  faChevronDown,
+  faChevronLeft,
+  faChevronRight,
+  faInstagram,
+  faFacebook,
+  faLinkedin,
+  faExternalLink,
+  faCopyright,
+  faBars,
+  faXmark
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  // LÄGG TILL basename="/~jama0019/build"   vid deploy
   <BrowserRouter>
     <App />
   </BrowserRouter>
