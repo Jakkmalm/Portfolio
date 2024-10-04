@@ -46,7 +46,8 @@
     {
       "id": 4,
       "projektNamn": "React-Native",
-      "beskrivning": "En React-native applikation där jag arbetat med eget node/express API + MongoDBAtlas"
+      "beskrivning": "En React-native applikation där jag arbetat med eget node/express API + MongoDBAtlas",
+      "url": "https://github.com/Jakkmalm/MyApp"
     }
   ]
 }
